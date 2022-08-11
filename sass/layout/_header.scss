@@ -1,0 +1,118 @@
+.page-header {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #ECECEC;
+
+}
+
+.container--header {
+    display: flex;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list-items:not(:last-child) {
+    margin-right: 50px;
+}
+
+.contacts-list {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.contacts-list-items:not(:last-child) {
+    margin-right: 50px;
+}
+
+/*====LOGO====*/
+.logo {
+    margin-right: 93px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.19;
+    color: var(--primary-black-color);
+
+}
+
+.logo-accent {
+    color: var(--accent-color);
+}
+
+/*====/LOGO====*/
+
+/*====site-nav==== */
+.site-nav {
+    position: relative;
+    color: var(--title-text-color);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+       &:hover,
+       &:focus {
+            color: var(--accent-color)
+        }
+
+}
+
+
+
+.page-header .current {
+    color: var(--accent-color);
+}
+
+.current::after {
+    position: absolute;
+    transform: translatey(28px);
+    content: "";
+    display: flex;
+    width: 100%;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+
+}
+
+/*====/site-nav==== */
+
+/*====contacts====*/
+.contacts {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    color: var(--primary-text-color);
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        &:hover,
+        &:focus {
+        color: var(--accent-color);
+        fill: var(--accent-color);
+    }
+
+}
+
+
+
+.contacts-icon {
+    margin-right: 10px;
+    fill: currentColor;
+
+}

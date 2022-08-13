@@ -67,10 +67,8 @@
     border: 1px solid var(--icons-color);
     border-radius: 4px;
     color: var(--icons-color);
-    transition-property: color, border;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
+    transition-property:color, border;
+    @include animation;
     &:hover,
     &:focus {
         border: 1px solid var(--accent-color);
@@ -103,9 +101,8 @@
     border-radius: 50% 50%;
     color: var(--icons-color);
     transition-property: color, background-color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
+    @include animation;
+   
         &:hover,
         &:focus {
             color: var(--primary-white-color);

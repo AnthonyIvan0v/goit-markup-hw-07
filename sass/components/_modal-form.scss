@@ -1,11 +1,11 @@
-.form-modal-wrapper {
+.form-modal{
     padding: 40px 40px;
     display: flex;
     flex-direction: column;
 
 }
 
-.modal-title {
+.form-modal__title {
     display: block;
     margin-bottom: 12px;
     font-weight: 700;
@@ -30,15 +30,17 @@
     border: 2px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
     transition-property: border;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    
+    @include animation;
         &:focus {
         border: 2px solid var(--accent-color);
         }
 }
 
-.label {
+.wrapper-label-input:not(:first-child) {
+    margin-top: 10px;
+}
+
+.form-modal__label {
     display: flex;
     margin-bottom: 4px;
     font-size: 12px;
@@ -47,25 +49,19 @@
     color: var(--primary-text-color);
 }
 
-.wrapper-label-input:not(:first-child) {
-    margin-top: 10px;
-}
-
 .icons-modal {
     position: absolute;
     top: 0;
     left: 0;
     transform: translate(12px, 11px);
     transition-property: fill;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
+    @include animation;
         .field-modal:focus+& {
         fill: var(--accent-color);
         }
 }
 
-.user-maessage {
+.form-modal__user-maessage {
     resize: none;
     width: 100%;
     height: 120px;
@@ -74,17 +70,18 @@
     border: 1px solid rgba(33, 33, 33, 0.2);
     color: var(--primary-black-color);
     border-radius: 4px;
-    transition-property: border;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
+    transition-property: border, color;
+    @include animation;
+    
+        &:focus {
+        border: 2px solid var(--accent-color);
+        }
+    
         &::placeholder {
         color: rgba(117, 117, 117, 0.5);
         }
 
-        &:focus {
-        border: 2px solid var(--accent-color);
-        }
+     
 }
 
 .fake-chekbox {
@@ -106,9 +103,8 @@
         border-radius: 2px;
         cursor: pointer;
         background: #FFFFFF;
-        transition-property: backround background-image;
-        transition-duration: 250ms;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-property:background, background-image;
+        @include animation;
         }
 
         .chekbox:checked+&::before {
@@ -138,9 +134,7 @@
     text-align: center;
     border-radius: 4px;
     transition-property: box-shadow;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
+    @include animation;
         &:hover,
         &:focus {
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);

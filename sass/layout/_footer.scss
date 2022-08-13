@@ -9,6 +9,7 @@
     align-items: baseline;
 }
 
+
 .logo-accent-footer {
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
@@ -32,30 +33,31 @@
     font-size: 14px;
     line-height: 1.71;
     color: var(--primary-white-color);
-    transition-property: color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property:color;
+    @include animation;
+    
+    &:hover,
+    &:focus {
+    color: var(--accent-color);
+    }
 }
 
 .contacts-footer {
     font-size: 14px;
     line-height: 1.71;
     color: rgba(255, 255, 255, 0.6);
-    transition-property: color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
-}
-
-.location:hover,
-.location:focus {
+    transition-property:color;
+    @include animation;
+    
+    &:hover,
+    &:focus {
     color: var(--accent-color);
+    }
 }
 
-.contacts-footer:hover,
-.contacts-footer:focus {
-    color: var(--accent-color);
-}
+
+
+
 
 .our-social-links {
     margin-left: 70px;
@@ -82,10 +84,9 @@
     border-radius: 50% 50%;
     fill: var(--background-color);
     background: rgba(255, 255, 255, 0.1);
-    transition-property: var(--background-color);
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    
+    transition-property: background ;
+    @include animation;
+
         &:hover,
         &:focus {
             background: var(--accent-color);
@@ -136,6 +137,12 @@
     letter-spacing: 0.06em;
     background: var(--accent-color);
     color: var(--primary-white-color);
+    transition-property: background-color;
+    @include animation;
+       &:hover,
+       &:focus {
+            background-color: var(--background-hero-button-hover-color);
+        }
 }
 
 .send {

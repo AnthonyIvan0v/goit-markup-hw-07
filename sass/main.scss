@@ -1,5 +1,6 @@
 @import "./utils/variables";
 @import "./utils/visually-hidden";
+@import "./utils/mixins";
 
 @import "./base/container";
 @import "./base/section";
@@ -16,4 +17,4 @@
 @import "./layout/specialization";
 @import "./layout/our-team";
 @import "./layout/footer";
-@import "./layout/work-exmples";
+@import "./layout/portfolio";

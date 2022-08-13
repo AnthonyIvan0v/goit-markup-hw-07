@@ -130,7 +130,7 @@ button {
   border-radius: 4px;
 }
 
-.button-close-modal {
+.modal__button-close {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -147,17 +147,17 @@ button {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.button-close-modal:hover {
+.modal__button-close:hover {
   fill: var(--accent-color);
 }
 
-.form-modal-wrapper {
+.form-modal {
   padding: 40px 40px;
   display: flex;
   flex-direction: column;
 }
 
-.modal-title {
+.form-modal__title {
   display: block;
   margin-bottom: 12px;
   font-weight: 700;
@@ -189,17 +189,17 @@ button {
   border: 2px solid var(--accent-color);
 }
 
-.label {
+.wrapper-label-input:not(:first-child) {
+  margin-top: 10px;
+}
+
+.form-modal__label {
   display: flex;
   margin-bottom: 4px;
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.01em;
   color: var(--primary-text-color);
-}
-
-.wrapper-label-input:not(:first-child) {
-  margin-top: 10px;
 }
 
 .icons-modal {
@@ -215,7 +215,7 @@ button {
   fill: var(--accent-color);
 }
 
-.user-maessage {
+.form-modal__user-maessage {
   resize: none;
   width: 100%;
   height: 120px;
@@ -224,15 +224,15 @@ button {
   border: 1px solid rgba(33, 33, 33, 0.2);
   color: var(--primary-black-color);
   border-radius: 4px;
-  transition-property: border;
+  transition-property: border, color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.user-maessage::placeholder {
-  color: rgba(117, 117, 117, 0.5);
-}
-.user-maessage:focus {
+.form-modal__user-maessage:focus {
   border: 2px solid var(--accent-color);
+}
+.form-modal__user-maessage::placeholder {
+  color: rgba(117, 117, 117, 0.5);
 }
 
 .fake-chekbox {
@@ -254,7 +254,7 @@ button {
   border-radius: 2px;
   cursor: pointer;
   background: #FFFFFF;
-  transition-property: backround background-image;
+  transition-property: background, background-image;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -297,7 +297,7 @@ button {
   border-bottom: 1px solid #ECECEC;
 }
 
-.container--header {
+.container_header {
   display: flex;
   align-items: center;
 }
@@ -306,26 +306,15 @@ button {
   display: flex;
 }
 
-.nav-list {
+.nav__list {
   display: flex;
   align-items: center;
 }
 
-.nav-list-items:not(:last-child) {
+.nav__list__items:not(:last-child) {
   margin-right: 50px;
 }
 
-.contacts-list {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-}
-
-.contacts-list-items:not(:last-child) {
-  margin-right: 50px;
-}
-
-/*====LOGO====*/
 .logo {
   margin-right: 93px;
   font-family: "Raleway", sans-serif;
@@ -335,12 +324,10 @@ button {
   color: var(--primary-black-color);
 }
 
-.logo-accent {
+.logo__accent {
   color: var(--accent-color);
 }
 
-/*====/LOGO====*/
-/*====site-nav==== */
 .site-nav {
   position: relative;
   color: var(--title-text-color);
@@ -356,23 +343,16 @@ button {
   color: var(--accent-color);
 }
 
-.page-header .current {
-  color: var(--accent-color);
-}
-
-.current::after {
-  position: absolute;
-  transform: translatey(28px);
-  content: "";
+.contacts-list {
   display: flex;
-  width: 100%;
-  height: 4px;
-  background-color: var(--accent-color);
-  border-radius: 2px;
+  align-items: center;
+  margin-left: auto;
 }
 
-/*====/site-nav==== */
-/*====contacts====*/
+.contacts-list__items:not(:last-child) {
+  margin-right: 50px;
+}
+
 .contacts {
   display: flex;
   align-items: center;
@@ -396,6 +376,21 @@ button {
   fill: currentColor;
 }
 
+.nav__list .current {
+  color: var(--accent-color);
+}
+
+.current::after {
+  position: absolute;
+  transform: translatey(28px);
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+
 .hero {
   background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/hero/hero.jpg");
   background-color: var(--background-hero-color);
@@ -411,7 +406,7 @@ button {
   background-size: cover;
 }
 
-.hero-title {
+.hero__title {
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -424,7 +419,7 @@ button {
   margin-bottom: 30px;
 }
 
-.button-hero {
+.hero__button {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;
@@ -436,7 +431,7 @@ button {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.button-hero:hover, .button-hero:focus {
+.hero__button:hover, .hero__button:focus {
   background-color: var(--background-hero-button-hover-color);
 }
 
@@ -660,6 +655,9 @@ button {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+.location:hover, .location:focus {
+  color: var(--accent-color);
+}
 
 .contacts-footer {
   font-size: 14px;
@@ -669,14 +667,7 @@ button {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.location:hover,
-.location:focus {
-  color: var(--accent-color);
-}
-
-.contacts-footer:hover,
-.contacts-footer:focus {
+.contacts-footer:hover, .contacts-footer:focus {
   color: var(--accent-color);
 }
 
@@ -705,7 +696,7 @@ button {
   border-radius: 50% 50%;
   fill: var(--background-color);
   background: rgba(255, 255, 255, 0.1);
-  transition-property: var(--background-color);
+  transition-property: background;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -755,6 +746,12 @@ button {
   letter-spacing: 0.06em;
   background: var(--accent-color);
   color: var(--primary-white-color);
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.button-subscribe:hover, .button-subscribe:focus {
+  background-color: var(--background-hero-button-hover-color);
 }
 
 .send {
@@ -788,9 +785,7 @@ button {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.button-secondary:hover,
-.button-secondary:focus {
+.button-secondary:hover, .button-secondary:focus {
   color: var(--primary-white-color);
   background-color: var(--accent-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -808,15 +803,8 @@ button {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.link-elements-card-set:hover,
-.link-elements-card-set:focus {
+.link-elements-card-set:hover, .link-elements-card-set:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-}
-
-.link-elements-card-set:hover .overlay-elements-card-set,
-.link-elements-card-set:focus .overlay-elements-card-set {
-  transform: translatey(0);
 }
 
 .position {
@@ -829,12 +817,16 @@ button {
   align-items: center;
   padding: 63px 23px;
   position: absolute;
+  transform: translateY(100%);
   top: 0;
   bottom: 0;
   background-color: rgba(33, 150, 243, 0.9);
   transition-property: transform;
-  transform: translatey(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.link-elements-card-set:hover .overlay-elements-card-set, .link-elements-card-set:focus .overlay-elements-card-set {
+  transform: translatey(0%);
 }
 
 .card-text {
